@@ -17,7 +17,8 @@ namespace WpfApp1.Viewmodels
             BirthDate = new DateTime(2000,1,1);
         }
         private string _login;
-
+        private string _password;
+        private string _repassword;
         public string Login
         {
             get { return _login; }
@@ -30,7 +31,7 @@ namespace WpfApp1.Viewmodels
                 }
             }
         }
-        private string _password;
+        
         public string Password
         {
             get { return _password; }
@@ -43,7 +44,7 @@ namespace WpfApp1.Viewmodels
                 }
             }
         }
-        private string _repassword;
+       
         public string Re_Password
         {
             get { return _repassword; }
@@ -79,5 +80,6 @@ namespace WpfApp1.Viewmodels
                 
          }
         public event PropertyChangedEventHandler PropertyChanged;
+
     }
 }

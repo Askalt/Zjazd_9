@@ -29,6 +29,7 @@ namespace WpfApp1
             InitializeComponent();
             _registrationViewModel = new RegistrationViewModel();
             this.DataContext = _registrationViewModel;
+            _dbContext = new FakeDB();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -43,7 +44,7 @@ namespace WpfApp1
                 MessageBox.Show("You must accept terms", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
             }
-            var newUser = new UserAccount()
+            var newUser = new Model.UserAccount()
             {
                 Username = _registrationViewModel.Login,
                 PasswordHash = _registrationViewModel.Password.ToUpper(),
@@ -52,8 +53,9 @@ namespace WpfApp1
                 AccountCreateionDate = DateTime.Now
 
             };
+            MessageBox.Show("Added U");
+            DataContext = new RegistrationViewModel();
 
-            _dbContext.
 
 
         }
